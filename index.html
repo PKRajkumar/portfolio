@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio – Rajkumar Pk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Devicon for tech icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #050505;
+      --bg-light: #f3f3f3;
+      --accent: #ff4b4b;
+      --accent-soft: #f3d9d9;
+      --text-main: #111;
+      --text-muted: #777;
+      --card-bg: #ffffff;
+      --border-soft: #e2e2e2;
+      --shadow-soft: 0 15px 40px rgba(0, 0, 0, 0.08);
+      --max-width: 1040px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      inset-inline: 0;
+      top: 0;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      color: #fff;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .nav-logo span {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      border-bottom-color: #fff;
+    }
+
+    .nav-contact-btn {
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid #fff;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      margin-top: 88px;
+      background: linear-gradient(135deg, #f6f6f6, #ececec);
+      min-height: 520px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+      align-items: stretch;
+      position: relative;
+    }
+
+    .hero-card {
+      background: #f2f2f2;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-name {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-role {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .hero-socials a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #333;
+      background:#fff;
+    }
+
+    /* BLOB HERO IMAGE STYLE */
+    .hero-right {
+      background: transparent;
+      position: relative;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      width: 260px;
+      height: 260px;
+    }
+
+    .hero-photo-blob {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 0%, #ff9f9f 0, #ff4b4b 45%, #e53162 100%);
+      border-radius: 60% 40% 55% 45%;
+      box-shadow: 0 18px 45px rgba(255, 75, 75, 0.5);
+    }
+
+    .hero-photo {
+      position: relative;
+      width: 70%;
+      height: 70%;
+      object-fit: cover;
+      border-radius: 999px;
+      margin: 40px auto 0;
+      display: block;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .floating-icon {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: #ff6b6b;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(255, 107, 107, 0.6);
+    }
+
+    .icon-1 {
+      top: 6%;
+      left: 8%;
+    }
+
+    .icon-2 {
+      top: 16%;
+      right: 4%;
+    }
+
+    .icon-3 {
+      bottom: 6%;
+      left: 65%;
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 80px 0;
+      background: var(--bg-light);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .section-title span {
+      display: inline-block;
+      padding: 4px 18px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 520px;
+      margin: 12px auto 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      margin-top: 60px;
+    }
+
+    .about-item {
+      background: var(--card-bg);
+      padding: 26px 22px;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      text-align: center;
+    }
+
+    .about-item h3 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .about-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* SKILLS */
+    .skills-section {
+      background: #f7f7f7;
+    }
+
+    .skills-groups {
+      margin-top: 50px;
+      display: grid;
+      gap: 40px;
+    }
+
+    .skills-group {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px 24px 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .skills-group h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .skills-group p.meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .skills-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 32px;
+      font-size: 28px;
+    }
+
+    .skills-icons .skill-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    /* EDUCATION */
+    .education-section {
+      background: var(--bg-light);
+    }
+
+    /* CERTIFICATES */
+    .certificates-section {
+      background: #f7f7f7;
+    }
+
+    .cert-list {
+      margin-top: 40px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .cert-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+    }
+
+    .cert-item-title {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .cert-item-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .cert-item-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* WORKSHOPS & TRAINING */
+    .workshop-section {
+      background: #ffffff;
+    }
+
+    .workshop-chip-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 6px 0 10px;
+    }
+
+    .logo-chip,
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid var(--border-soft);
+      background: #fafafa;
+      color: #555;
+    }
+
+    .logo-chip span {
+      margin-left: 5px;
+      font-weight: 500;
+    }
+
+    .logo-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff4b4b, #ff9b73);
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      background: #eaeaea;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .portfolio-item {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      background: #111;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      opacity: 0.9;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .portfolio-label {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      padding: 4px 10px;
+      background: rgba(0, 0, 0, 0.72);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #f6f6f6;
+    }
+
+    .contact-inner {
+      max-width: 640px;
+      margin: 40px auto 0;
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 26px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #fafafa;
+      padding: 10px 14px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field textarea {
+      border-radius: 14px;
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-soft);
+    }
+
+    .contact-submit {
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    .btn-primary {
+      padding: 10px 26px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      color: #888;
+      text-align: center;
+      padding: 26px 12px 40px;
+      font-size: 11px;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .footer-socials a {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid #555;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    .back-to-top {
+      margin-top: 10px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #aaa;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        order: 2;
+      }
+
+      .hero-right {
+        order: 1;
+        padding: 40px 20px 26px;
+      }
+
+      .hero-photo-wrap {
+        width: 220px;
+        height: 220px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none; /* simple: hide nav links on small screens */
+      }
+
+      header {
+        background: rgba(0,0,0, 0.98);
+      }
+
+      .hero-card {
+        padding: 40px 24px 30px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .contact-inner {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav">
+      <div class="nav-logo">
+        <span>R</span>
+        <div>Portfolio</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#workshops">Workshops</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-contact-btn">Hire me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <div class="hero-badge">Hi, I am</div>
+        <h1 class="hero-name">Rajkumar Pk</h1>
+        <div class="hero-role">Full-Stack / Front-End Developer · B.Tech IT</div>
+        <p style="font-size:13px;color:var(--text-muted);max-width:260px;">
+          Final-year B.Tech Information Technology student specializing in building
+          efficient web applications using React.js, Java Spring Boot, and PostgreSQL.
+          I enjoy turning ideas into clean, scalable code and solving real-world problems
+          through modern web technologies.
+        </p>
+
+        <div class="hero-socials">
+          <a href="https://github.com/PKRajkumar" title="GitHub" target="_blank" rel="noopener">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="https://linkedin.com/in/rajkumar-pk-823367287" title="LinkedIn" target="_blank" rel="noopener">
+            <i class="devicon-linkedin-plain"></i>
+          </a>
+          <a href="https://www.instagram.com/mr_rajkumar_002?igsh=MWRmOTFoeDZodTJiaw%3D%3D&utm_source=qr" title="Instagram" target="_blank" rel="noopener">
+            IG
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-blob"></div>
+
+          <!-- your photo -->
+          <img src="Raj Kumar.jpg" alt="Photo of Rajkumar Pk" class="hero-photo" />
+
+          <!-- floating small icons -->
+          <div class="floating-icon icon-1">{ }</div>
+          <div class="floating-icon icon-2">&lt;/&gt;</div>
+          <div class="floating-icon icon-3">JS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrapper">
+      <h2 class="section-title"><span>About Me</span></h2>
+      <p class="section-subtitle">
+        I’m a final-year B.Tech IT student and aspiring full-stack developer from
+        Chennai. I focus on crafting responsive, performance-oriented web experiences
+        using Java Spring Boot, React.js, and PostgreSQL, with an emphasis on clean,
+        maintainable code.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-item">
+          <h3>Design</h3>
+          <p>
+            I care about clarity and usability in UI — structuring layouts with clean
+            typography, spacing, and responsive behavior for web apps and dashboards.
+          </p>
+        </div>
+        <div class="about-item">
+          <h3>Development</h3>
+          <p>
+            Experienced in building full-stack applications using Java, Spring Boot,
+            PostgreSQL, and React. I write clean, modular code and follow best practices
+            learned through academic and mini projects.
+          </p>
+        </div>
+        <div class="about-item">
+          <h3>Maintenance</h3>
+          <p>
+            Comfortable debugging, refactoring legacy code, and improving performance.
+            I like optimizing database queries, cleaning up components, and making
+            applications easier to extend and maintain.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section">
+    <div class="wrapper">
+      <h2 class="section-title"><span>Skills</span></h2>
+      <p class="section-subtitle">
+        Tools and technologies I’m currently working with, what I’m learning next,
+        and other abilities I bring to projects.
+      </p>
+
+      <div class="skills-groups">
+        <!-- Using Now -->
+        <div class="skills-group">
+          <h3>Using now</h3>
+          <p class="meta">
+            Core tools I use to build full-stack web applications and APIs.
+          </p>
+          <div class="skills-icons">
+            <div class="skill-label">
+              <i class="devicon-java-plain"></i>
+              <span>Java</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-html5-plain"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-css3-plain"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-javascript-plain"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-react-original"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-spring-plain"></i>
+              <span>Spring Boot</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-postgresql-plain"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-label">
+              <span style="font-size:8px;">🛢️</span>
+              <span>PGAdmin 4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning -->
+        <div class="skills-group">
+          <h3>Learning</h3>
+          <p class="meta">
+            Exploring modern frameworks, full-stack patterns, and AI-related
+            technologies to expand my development toolkit.
+          </p>
+          <div class="skills-icons">
+            <div class="skill-label">
+              <i class="devicon-nodejs-plain"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-nextjs-original"></i>
+              <span>Next.js</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-typescript-plain"></i>
+              <span>TypeScript</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-mongodb-plain"></i>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-express-original"></i>
+              <span>Express</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-vuejs-plain"></i>
+              <span>Vue.js</span>
+            </div>
+            <div class="skill-label">
+              <i class="devicon-flutter-plain"></i>
+              <span>Flutter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Skills -->
+        <div class="skills-group">
+          <h3>Other skills</h3>
+          <p class="meta">
+            Skills that help me collaborate, communicate, and present ideas clearly.
+          </p>
+          <div class="skills-icons">
+            <div class="skill-label">
+              <span style="font-size:20px;">🎨</span>
+              <span>UI design</span>
+            </div>
+            <div class="skill-label">
+              <span style="font-size:20px;">🧠</span>
+              <span>Problem solving</span>
+            </div>
+            <div class="skill-label">
+              <span style="font-size:20px;">💬</span>
+              <span>Group discussion</span>
+            </div>
+            <div class="skill-label">
+              <span style="font-size:20px;">🎬</span>
+              <span>Video editing</span>
+            </div>
+            <div class="skill-label">
+              <span style="font-size:20px;">📸</span>
+              <span>Photography</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="education-section">
+    <div class="wrapper">
+      <h2 class="section-title"><span>Education</span></h2>
+      <p class="section-subtitle">
+        My academic background and qualifications.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-item">
+          <h3>B.Tech – IT</h3>
+          <p>
+            Mohamed Sathak A.J College of Engineering, Chennai<br/>
+            10/2022 – 10/2026 (Pursuing)<br/>
+            CGPA: 7.8 (till 6th semester)
+          </p>
+        </div>
+        <div class="about-item">
+          <h3>HSC</h3>
+          <p>
+            Christ Church Anglo-Indian Higher Secondary School<br/>
+            05/2021 – 05/2022<br/>
+            Score: 72%
+          </p>
+        </div>
+        <div class="about-item">
+          <h3>Languages</h3>
+          <p>
+            English – Professional Working Proficiency<br/>
+            Tamil – Professional Working Proficiency<br/>
+            Hindi – Limited Working Proficiency<br/>
+            French – Elementary Proficiency
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="certificates-section" id="certificates">
+    <div class="wrapper">
+      <h2 class="section-title"><span>Certificates</span></h2>
+      <p class="section-subtitle">
+        Courses and certifications that helped me strengthen my technical and soft skills.
+      </p>
+
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-item-title">TCS iON National Qualifier Test (NQT) – Cognitive</div>
+          <div class="cert-item-meta">Valid: 08/2025 – 08/2027 · Score: 56.10%</div>
+          <div class="cert-item-desc">
+            Assessed on quantitative aptitude, reasoning, and verbal skills for entry-level IT roles.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">Artificial Intelligence Program – Infosys &amp; EduBridge</div>
+          <div class="cert-item-meta">Grade: A+ (96%)</div>
+          <div class="cert-item-desc">
+            Learned AI fundamentals, use cases, and applications with hands-on exposure to concepts.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">Group Discussion Course – TCS iON</div>
+          <div class="cert-item-meta">Communication &amp; soft skills</div>
+          <div class="cert-item-desc">
+            Trained in structured communication, idea presentation, and teamwork in group discussions.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">Flutter – TingQbator · NASSCOM Foundation &amp; ZIKSHAA</div>
+          <div class="cert-item-meta">Certificate of Excellence</div>
+          <div class="cert-item-desc">
+            Completed the Flutter course focused on building cross-platform mobile apps.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">Vue.js – TingQbator · NASSCOM Foundation &amp; ZIKSHAA</div>
+          <div class="cert-item-meta">Frontend framework</div>
+          <div class="cert-item-desc">
+            Gained understanding of Vue.js concepts and building interactive interfaces.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">HTML &amp; CSS – TingQbator Program</div>
+          <div class="cert-item-meta">Web fundamentals</div>
+          <div class="cert-item-desc">
+            Completed foundational training in semantic HTML and responsive CSS.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">MERN Full-Stack Development – TingQbator Program</div>
+          <div class="cert-item-meta">MongoDB · Express · React · Node.js</div>
+          <div class="cert-item-desc">
+            Learned how to build full-stack applications using the MERN stack.
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-item-title">Java (2024)</div>
+          <div class="cert-item-meta">Programming language</div>
+          <div class="cert-item-desc">
+            Covered object-oriented concepts, core Java syntax, and problem solving in Java.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOPS & TRAINING -->
+  <section id="workshops" class="workshop-section">
+    <div class="wrapper">
+      <h2 class="section-title"><span>🎓 Workshops &amp; Training</span></h2>
+      <p class="section-subtitle">
+        Hands-on programs and industry-focused training sessions I have attended.
+      </p>
+
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-item-title">Data Analytics Workshop – Imarticus Learning</div>
+          <div class="workshop-chip-row">
+            <div class="logo-chip">
+              <div class="logo-dot"></div>
+              <span>Imarticus Learning</span>
+            </div>
+            <div class="badge-chip">Data Analytics · 1 Day</div>
+            <div class="badge-chip">Nov 2025</div>
+          </div>
+          <div class="cert-item-desc">
+            Attended an intensive one-day data analytics workshop focused on data handling,
+            exploratory analysis, basic visualization and how analytics supports
+            business decision-making in real-world scenarios.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / PROJECTS -->
+  <section id="portfolio" class="portfolio">
+    <div class="wrapper">
+      <h2 class="section-title"><span>Projects</span></h2>
+      <p class="section-subtitle">
+        Selected projects and visual explorations. I’m always excited to learn new technologies
+        and apply them in real-world solutions.
+      </p>
+
+      <!-- Project 1: Shopping Mall Management System -->
+<div class="portfolio-item"
+     onclick="window.open('https://github.com/PKRajkumar/Rajkumar_TNS','_blank')"
+     style="cursor: pointer;">
+  <img src="https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=800"
+       alt="Shopping Mall Management System" />
+
+  <div class="portfolio-content">
+    <h3>Shopping Mall Management System</h3>
+    <p>
+      Full-stack application to manage shops, customers, and billing for a shopping mall,
+      with CRUD operations and role-based access.
+    </p>
+
+    <p class="project-tech">
+      <strong>Tech:</strong> Java · Spring Boot · PostgreSQL · REST API
+    </p>
+
+    <div class="project-links">
+      <a href="https://github.com/PKRajkumar/Rajkumar_TNS" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="btn-ghost">
+        GitHub
+      </a>
+
+      <a href="#" target="_blank" class="btn-ghost secondary">Live Demo</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrapper">
+      <h2 class="section-title"><span>Contact</span></h2>
+      <p class="section-subtitle">
+        I’m open to internships, entry-level developer roles, and collaborative projects.
+        If you think I’d be a good fit for your team or idea, feel free to reach out —
+        I’ll get back to you as soon as possible.
+      </p>
+
+      <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;">
+        Email: pkrajkumar616@gmail.com · Phone: +91 8072483245 · Chennai, India
+      </p>
+
+     <form class="contact-inner" action="https://formsubmit.co/pkrajkumar616@gmail.com" method="POST">
+
+  <!-- FormSubmit settings -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://YOUR-WEBSITE-URL/thankyou.html">
+
+  <div class="contact-row">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input id="name" type="text" name="name" placeholder="Enter your name" required />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="you@example.com" required />
+    </div>
+  </div>
+
+  <div class="field" style="margin-bottom:14px;">
+    <label for="subject">Subject</label>
+    <input id="subject" type="text" name="subject" placeholder="What’s this about?" />
+  </div>
+
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Tell me a bit about your idea…"></textarea>
+  </div>
+
+  <div class="contact-submit">
+    <button class="btn-primary" type="submit">Send message</button>
+  </div>
+</form>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-socials">
+      <a href="https://github.com/PKRajkumar" target="_blank" rel="noopener">
+        <i class="devicon-github-original"></i>
+      </a>
+      <a href="https://linkedin.com/in/rajkumar-pk-823367287" target="_blank" rel="noopener">
+        <i class="devicon-linkedin-plain"></i>
+      </a>
+      <a href="https://www.instagram.com/mr_rajkumar_002?igsh=MWRmOTFoeDZodTJiaw%3D%3D&utm_source=qr" target="_blank" rel="noopener">IG</a>
+    </div>
+    <div>© <span id="year"></span> Rajkumar Pk. All rights reserved.</div>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
